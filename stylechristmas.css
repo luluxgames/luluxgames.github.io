@@ -1,29 +1,28 @@
-/* General body styling */
+
 body {
     text-align: center;
     font-family: 'Cooper', Verdana, sans-serif;
-    background-color: #1c463f;
+    background-color: #37766d;
     margin: 0;
     padding: 20px;
 }
 
-/* Header and Header Image */
 header {
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra horizontalmente la imagen y el nav */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
 header img {
     width: 100%;
-    max-width: 800px; /* Limita el ancho máximo de la imagen */
+    max-width: 800px;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px; /* Añade espacio debajo de la imagen */
+    margin-bottom: 20px;
 }
 
-/* Header Title */
+
 h1 {
     text-align: center;
     color: #d1393a;
@@ -33,16 +32,17 @@ h1 {
     text-shadow: 2px 2px 4px #ffffff;
 }
 
-/* Subtitles */
+
 h2 {
     color: #d1393a;
     text-align: center;
     font-size: 1.8em;
     margin-top: 40px;
     font-weight: 600;
+	text-shadow: 2px 2px 4px #ffffff;
 }
 
-/* Paragraphs in main */
+
 main {
     padding: 20px;
     display: flex;
@@ -53,14 +53,14 @@ main {
 }
 
 main p {
-    color: #ffffff; /* Changes text color to black */
+    color: #ffffff;
     font-size: 1em;
     line-height: 1.8;
     text-align: justify;
     margin: 20px 0;
 }
 
-/* Center the image inside main */
+
 main img {
     display: block;
     max-width: 70%;
@@ -68,7 +68,7 @@ main img {
     margin: 20px auto;
 }
 
-/* Navigation Styling */
+
 nav {
     background-color: #fdc544;
     border-radius: 20px;
@@ -77,25 +77,25 @@ nav {
     text-align: center;
 }
 
-/* List Styling for horizontal menu */
+
 ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Adds spacing between items */
+    gap: 15px;
     margin: 0;
 }
 
 li {
-    font-size: 1.2em; /* Smaller font size for the menu */
+    font-size: 1.2em;
     font-weight: 500;
-    color: #1c463f;
+    color: #254d47;
 }
 
 li a {
     text-decoration: none;
-    color: #1c463f;
+    color: #254d47;
     font-weight: 600;
 }
 
@@ -104,11 +104,11 @@ li a:hover {
     text-shadow: 1px 1px 3px #3ecf5d;
 }
 
-/* Footer */
+
 footer p {
     font-family: 'Cooper', Verdana, sans-serif;
     margin: 0;
-    color: pink;
+    color: #ffffff;
     text-align: center;
     font-size: 1em;
 }

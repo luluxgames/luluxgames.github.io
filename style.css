@@ -1,29 +1,28 @@
-/* General body styling */
 body {
     text-align: center;
-    font-family: 'Cooper', Verdana, sans-serif;
+	font-family: "Roboto Flex", serif;
     background-color: #fce4ec;
     margin: 0;
     padding: 20px;
 }
 
-/* Header and Header Image */
+
 header {
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: center; /* Centra horizontalmente la imagen y el nav */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
 header img {
     width: 100%;
-    max-width: 800px; /* Limita el ancho máximo de la imagen */
+    max-width: 800px;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px; /* Añade espacio debajo de la imagen */
+    margin-bottom: 20px;
 }
 
-/* Header Title */
+
 h1 {
     text-align: center;
     color: #ec407a;
@@ -33,16 +32,17 @@ h1 {
     text-shadow: 2px 2px 4px #d81b60;
 }
 
-/* Subtitles */
+
 h2 {
     color: #d81b60;
     text-align: center;
     font-size: 1.8em;
     margin-top: 40px;
-    font-weight: 600;
+    font-weight: bolder;
+	text-shadow: 2px 2px 4px #d81b60;
 }
 
-/* Paragraphs in main */
+
 main {
     padding: 20px;
     display: flex;
@@ -53,23 +53,22 @@ main {
 }
 
 main p {
-    color: #000000; /* Changes text color to black */
+    color: #000000;
     font-size: 1em;
     line-height: 1.8;
     text-align: justify;
     margin: 20px 0;
 }
 
-/* Center the image inside main */
+
 main img {
     display: block;
     max-width: 70%;
     height: auto;
     margin: 20px auto;
-    border-radius: 10px; /* Rounds the image corners */
 }
 
-/* Navigation Styling */
+
 nav {
     background-color: #fff0f6;
     border-radius: 20px;
@@ -78,18 +77,18 @@ nav {
     text-align: center;
 }
 
-/* List Styling for horizontal menu */
+
 ul {
     list-style-type: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Adds spacing between items */
+    gap: 15px;
     margin: 0;
 }
 
 li {
-    font-size: 1.2em; /* Smaller font size for the menu */
+    font-size: 1.2em;
     font-weight: 500;
     color: #ad1457;
 }
@@ -105,11 +104,34 @@ li a:hover {
     text-shadow: 1px 1px 3px #d81b60;
 }
 
-/* Footer */
+
 footer p {
-    font-family: 'Cooper', Verdana, sans-serif;
     margin: 0;
     color: pink;
     text-align: center;
     font-size: 1em;
+}
+
+figure {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #000000;
+    margin-top: 8px;
+    font-style: bold;
+}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 700
+
+.signika-negative-<uniquifier> {
+  font-family: "Signika Negative", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
