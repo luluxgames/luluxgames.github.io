@@ -1,11 +1,12 @@
 body {
     text-align: center;
-	font-family: "Roboto Flex", serif;
+    font-family: "Roboto Flex", serif;
     background-color: #fce4ec;
+    background-image: url('media/fondo.gif');
+    background-size: 1366px 768px;
     margin: 0;
     padding: 20px;
 }
-
 
 header {
     display: flex;
