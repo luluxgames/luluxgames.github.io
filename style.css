@@ -76,7 +76,9 @@ nav {
     padding: 15px;
     margin-top: 0;
     text-align: center;
+    border: 3px solid #ff9ea4;
 }
+
 
 
 ul {
