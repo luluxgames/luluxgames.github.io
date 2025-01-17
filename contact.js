@@ -14,6 +14,8 @@ function procesa_envio(event)
 		nombre.style.color = "#ff0000";
 		nombre.style.border = "2px solid red";
 		
+		nombre.focus();
+		
 		return false;
 	}
 	
