@@ -21,44 +21,16 @@
                 <li><a href="formchrist.html">🎅 Ho Ho Ho!</a></li>
             </ul>
         </nav>
-		
-	    <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission to server
-
-            // Get input values
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            // Basic validation checks
-            if (!name) {
-                alert("Name is required.");
-                return;
-            }
-            if (!email) {
-                alert("Email is required.");
-                return;
-            }
-            if (!message) {
-                alert("Message is required.");
-                return;
-            }
-
-            // If all validations pass, display success message
-            alert("Thank you for your message, " + name + "! We'll get back to you soon.");
-            document.getElementById("contactForm").reset();
-        });
-    </script>
 	
+		<script src="contact.js"></script>
     </header>
     <main>
         <section>
             <article>
                 <h1>CONTACT FORM</h1>
-                <form id="contactForm">
+                <form method="POST" action="envio_falso.html" id="form_contacto" onSubmit="procesa_envio(event);">
                     <label for="name">Name*:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                     <br><br>
                     
                     <label for="dob">Date of Birth:</label>
@@ -66,7 +38,7 @@
                     <br><br>
                     
                     <label for="email">Email*:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email">
                     <br><br>
                     
                     <label for="phone">Mobile Number:</label>
@@ -78,10 +50,20 @@
                     <br><br>
                     
                     <label for="message">Message*:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5"></textarea>
                     <br><br>
                     
-                    <button type="submit">Submit</button>
+					<label for="pokemon_contacto">Initial Pokemon:</label>
+                    <select id="pokemon_contacto" name="pokemon">
+					<option value="1">Bulbasur</option>
+					<option value="4">Charmander</option>
+					<option value="7">Squirtle</option>
+					</select>
+                    <br><br>
+					
+					<p><output id="salida">Los campos con asterisco son obligatorios.</output><p>
+					
+                    <p><input type="submit" value="Contact!"/></p>
                 </form>
             </article>
         </section>
