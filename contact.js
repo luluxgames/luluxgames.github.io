@@ -1,35 +1,51 @@
-function procesa_envio(event)
-{
-	event.preventDefault();
-	
-	console.log("Procesando envío.");
-	
-	let nombre = document.getElementById("name");
-	let salida = document.getElementById("salida");
-	
-	if (nombre.value.length < 2){
-		salida.value = "El nombre debe tener al menos 2 caracteres.";
-		
-		salida.style.color = "#ff0000";
-		nombre.style.color = "#ff0000";
-		nombre.style.border = "2px solid red";
-		
-		nombre.focus();
-		
-		return false;
-	}
-	
-	let email = document.getElementById("email");
-	
-	if (email.value.length < 6){
-		salida.value = "El email debe tener al menos 6 caracteres.";
-		
-		salida.style.color = "#ff0000";
-		email.style.color = "#ff0000";
-		email.style.border = "2px solid red";
-		
-		return false;
-	}
-	
-	document.getElementById("form_contacto").submit();
+function procesa_envio(event) {
+    event.preventDefault();
+
+    console.log("Procesando envío.");
+    
+    let nombre = document.getElementById("name");
+    let email = document.getElementById("email");
+    let mensaje = document.getElementById("message");
+    let salida = document.getElementById("salida");
+    let valido = true;
+
+    function marcarCampo(campo, correcto) {
+        if (correcto) {
+            campo.style.border = "2px solid green";
+            campo.style.color = "black";
+        } else {
+            campo.style.border = "2px solid red";
+            campo.style.color = "red";
+            valido = false;
+        }
+    }
+
+    if (nombre.value.length < 2) {
+        salida.innerText = "El nombre debe tener al menos 2 caracteres.";
+        marcarCampo(nombre, false);
+        nombre.focus();
+    } else {
+        marcarCampo(nombre, true);
+    }
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        salida.innerText = "Introduce un email válido.";
+        marcarCampo(email, false);
+    } else {
+        marcarCampo(email, true);
+    }
+
+    if (mensaje.value.length < 5) {
+        salida.innerText = "El mensaje debe tener al menos 5 caracteres.";
+        marcarCampo(mensaje, false);
+    } else {
+        marcarCampo(mensaje, true);
+    }
+
+    if (valido) {
+        salida.innerText = "Formulario enviado correctamente.";
+        salida.style.color = "green";
+        document.getElementById("form_contacto").submit();
+    }
 }

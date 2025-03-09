@@ -1,3 +1,26 @@
+@media (max-width: 720px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@keyframes blink {
+	0% {opacity: 0}
+	49%{opacity: 0}
+	50% {opacity: 1}
+}
+
+blink{animation: blink 1s infinite;}
+
+
 body {
     text-align: center;
     font-family: "Roboto Flex", serif;
@@ -23,7 +46,6 @@ header img {
     margin-bottom: 20px;
 }
 
-
 h1 {
     text-align: center;
     color: #ec407a;
@@ -33,7 +55,6 @@ h1 {
     text-shadow: 2px 2px 4px #d81b60;
 }
 
-
 h2 {
     color: #d81b60;
     text-align: center;
@@ -42,7 +63,6 @@ h2 {
     font-weight: bolder;
 	text-shadow: 2px 2px 4px #d81b60;
 }
-
 
 main {
     padding: 20px;
@@ -61,7 +81,6 @@ main p {
     margin: 20px 0;
 }
 
-
 main img {
     display: block;
     max-width: 70%;
@@ -69,8 +88,25 @@ main img {
     margin: 20px auto;
 }
 
-
 nav {
+    background-color: #fff0f6;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 0;
+    text-align: center;
+    border: 3px solid #ff9ea4;
+}
+
+video {
+    background-color: #fff0f6;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 0;
+    text-align: center;
+    border: 3px solid #ff9ea4;
+}
+
+audio {
     background-color: #fff0f6;
     border-radius: 20px;
     padding: 15px;

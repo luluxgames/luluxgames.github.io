@@ -12,76 +12,77 @@
         <p><img src="media/encabezado.png" /></p>
         <nav>
             <ul>
-			<li><a href="index.html">💗 Cover</a></li>
+                <li><a href="index.html">💗 Cover</a></li>
                 <li><a href="portfolio.html">📚 Portfolio</a></li>
                 <li><a href="hobbies.html">🎨 Hobbies</a></li>
                 <li><a href="game.html">🎮 Game</a></li>
                 <li><a href="contact.html">💬 Network</a></li>
-				<li><a href="form.html">🖊️ Form</a></li>
+                <li><a href="form.html">🖊️ Form</a></li>
             </ul>
         </nav>
-		
-	<script>
-	
-let num_min = 1;
-let num_max = 100;
 
-let num_random = Math.floor(Math.random()*num_max)+num_min;
-console.log("El numero a adivinar es: "+num_random);
+        <script>
+            let num_min = 1;
+            let num_max = 100;
+            let num_random = Math.floor(Math.random() * (num_max - num_min + 1)) + num_min;
+            console.log("El número a adivinar es: " + num_random);
 
-let info = "Enter a number between "+num_min+" and "+num_max+" to guess the number."
+            let intentos = 0;
+            let info = "Enter a number between " + num_min + " and " + num_max + " to guess the number.";
 
-function check_num()
-{
-	let valor = document.getElementById("game_num").value;
-	
-	let result = document.getElementById("result");
-	
-	if (valor < num_min){
-		result.value = "The number must be 1 or larger.";
-		return;}
-	else if (valor > num_min){
-		result.value = "The number must be 100 or less.";
-		return;}
-	
-	let text = "";
-	
-	if (valor > num_random) {
-	text = "The number to be guessed is less than "+valor+".";
-	}
-	else if (valor < num_random) {
-	text = "The number to be guessed is larger than "+valor+".";
-	}
-	else{
-	text = "You got it right!";
-	}
-	
-	console.log(text);
-	result.value = text;
-}
-	</script>
-		
+            function check_num() {
+                let valor = parseInt(document.getElementById("game_num").value);
+                let result = document.getElementById("result");
+                let intentosDisplay = document.getElementById("intentos");
+                let boton = document.getElementById("guessButton");
+
+                if (isNaN(valor)) {
+                    result.innerText = "Please enter a valid number.";
+                    return;
+                }
+
+                if (valor < num_min) {
+                    result.innerText = "The number must be 1 or larger.";
+                    return;
+                } else if (valor > num_max) {
+                    result.innerText = "The number must be 100 or less.";
+                    return;
+                }
+
+                intentos++;
+                intentosDisplay.innerText = `Attempts: ${intentos}`;
+
+                let text = "";
+                if (valor > num_random) {
+                    text = "The number to be guessed is less than " + valor + ".";
+                } else if (valor < num_random) {
+                    text = "The number to be guessed is larger than " + valor + ".";
+                } else {
+                    text = "🎉 You got it right! 🎉";
+                    boton.disabled = true;
+                    result.style.color = "green";
+                }
+
+                console.log(text);
+                result.innerText = text;
+            }
+        </script>
+
     </header>
     <main>
         <section>
             <article>
                 <h1>GAME</h1>
-			<form>
-				<h2>~ Guess the number ~</h2>
-				
-				<strong><p id="info">Enter a number between 1 and 100 to guess the number.</p></strong>
-				
-				<p>Number: <input type="number" id="game_num" name="num" /></p>
-				
-				<p><output id="result">Enter the number in the text field.</output></p>
-				
-				<p><input type="button" value="Guess!" onClick="check_num();" /></p>
-				
-			</form>
-			
+                <form>
+                    <h2>~ Guess the number ~</h2>
+                    <strong><p id="info">Enter a number between 1 and 100 to guess the number.</p></strong>
+                    <p>Number: <input type="number" id="game_num" name="num" /></p>
+                    <p><output id="result">Enter the number in the text field.</output></p>
+                    <p><strong id="intentos">Attempts: 0</strong></p>
+                    <p><input type="button" id="guessButton" value="Guess!" onClick="check_num();" /></p>
+                </form>
                 <img src="media/mario.png" />
-			</article>
-			
+            </article>
         </section>
     </main>
     <footer>
@@ -89,24 +90,22 @@ function check_num()
             <h2>~ Links ~</h2>
             <nav>
                 <ul>
-                <li><a href="index.html">💗 Cover</a></li>
-                <li><a href="portfolio.html">📚 Portfolio</a></li>
-                <li><a href="hobbies.html">🎨 Hobbies</a></li>
-                <li><a href="game.html">🎮 Game</a></li>
-                <li><a href="contact.html">💬 Network</a></li>
-				<li><a href="form.html">🖊️ Form</a></li>
-            </ul>
+                    <li><a href="index.html">💗 Cover</a></li>
+                    <li><a href="portfolio.html">📚 Portfolio</a></li>
+                    <li><a href="hobbies.html">🎨 Hobbies</a></li>
+                    <li><a href="game.html">🎮 Game</a></li>
+                    <li><a href="contact.html">💬 Network</a></li>
+                    <li><a href="form.html">🖊️ Form</a></li>
+                </ul>
                 <img src="media/cat.gif" />
             </nav>
         </section>
         <p>Copyright (c) 2024-2025</p>
     </footer>
-	
-	<script>
-	
-document.getElementById("info").innerHTML = info;
-	
-	</script>
-	
+
+    <script>
+        document.getElementById("info").innerHTML = info;
+    </script>
+
 </body>
 </html>
