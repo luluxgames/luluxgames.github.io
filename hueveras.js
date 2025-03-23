@@ -223,7 +223,7 @@ function actualiza() {
             if (huevo.y > canvas_h) {
                 huevo.destroy();
                 countdown -= 5;
-				puntuacion -= 5;
+				puntuacion -= 1;
                 countdown_text.setText(`Tiempo: ${countdown}`);
                 fx.bad.play();
                 return false;
