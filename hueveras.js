@@ -216,21 +216,24 @@ function generarHuevo(scene) {
 function actualiza() {
     if (juegoTerminado) return;
 
-    huevos.forEach(huevo => {
+    huevos = huevos.filter(huevo => {
         if (huevo.falling) {
             huevo.y += huevos_speed;
 
             if (huevo.y > canvas_h) {
                 huevo.destroy();
                 countdown -= 5;
-                puntuacion -= 5;
+				puntuacion -= 5;
                 countdown_text.setText(`Tiempo: ${countdown}`);
-                puntuacion_text.setText(`Puntuación: ${puntuacion}`);
                 fx.bad.play();
+                return false;
             }
+            return true;
         }
+        return true;
     });
 }
+
 
 // !!!!GAME OVER!!!!
 function finDelJuego(scene) {
