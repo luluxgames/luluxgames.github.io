@@ -28,10 +28,12 @@ let countdown_interval;
 let puntuacion = 0;
 let puntuacion_text;
 let juegoTerminado = false;
+let juegoIniciado = false;
 
 let huevos = [];
 let huevos_speed = 1;
 let huevo_spawn_interval;
+let huevosRestantes = 500;
 
 // Música
 let music = {
@@ -107,6 +109,23 @@ function crea() {
 		strokeThickness: 4
 	});
 
+	// Mostrar pantalla de inicio
+	let startText = this.add.text(canvas_w / 2, canvas_h / 2, 
+		"☆HUEVERAS DE CARTÓN II☆\n\nClasifica los huevitos por colores.\n¡Que no se te caigan o salgan de la pantalla!\nNo te quedes sin tiempo...\n¿Consiguirás clasificar los 500 huevos?\n\n☆Click para comenzar☆",{
+			fontSize: "20px",
+			fontFamily: "Comic Sans MS",
+			color: "#ffffff",
+			stroke: "#ff9ea4",
+			strokeThickness: 3,
+			align: "center"
+		}).setOrigin(0.5);
+
+	// Pausar la generación de huevos y el temporizador hasta el clic
+	this.input.once('pointerdown', () => {
+		startText.destroy();
+		iniciarJuego(this);
+	});
+
     // Música
     music.background = this.sound.add('background_music', { loop: true, volume: 0.5 });
     music.background.play();
@@ -115,25 +134,6 @@ function crea() {
     fx.mouseclick = this.sound.add('mouseclick_fx');
     fx.good = this.sound.add('good_fx');
     fx.bad = this.sound.add('bad_fx');
-
-    // Generación de huevos
-    huevo_spawn_interval = setInterval(() => {
-        if (!juegoTerminado) {
-            generarHuevo(this);
-        }
-    }, Phaser.Math.Between(500, 1500));
-
-    // Iniciar el temporizador
-    countdown_interval = setInterval(() => {
-        if (!juegoTerminado) {
-            countdown--;
-            countdown_text.setText(`Tiempo: ${countdown}`);
-
-            if (countdown <= 0) {
-                finDelJuego(this);
-            }
-        }
-    }, 1000);
 
     // Arrastres
     this.input.on('drag', function (pointer, objeto, x, y) {
@@ -183,8 +183,36 @@ function crea() {
     });
 }
 
+// !!!!INICIAR JUEGO!!!!
+function iniciarJuego(scene) {
+    juegoIniciado = true;
+
+    // Generación de huevos
+    huevo_spawn_interval = setInterval(() => {
+        if (!juegoTerminado) {
+            generarHuevo(scene);
+        }
+    }, Phaser.Math.Between(500, 1500));
+
+    // Iniciar el temporizador
+    countdown_interval = setInterval(() => {
+        if (!juegoTerminado) {
+            countdown--;
+            countdown_text.setText(`Tiempo: ${countdown}`);
+
+            if (countdown <= 0) {
+                finDelJuego(scene);
+            }
+        }
+    }, 1000);
+}
+
 // !!!!GENERAR HUEVO!!!!
 function generarHuevo(scene) {
+    if (huevosRestantes <= 0) return; // No genera más huevos si ya no quedan
+
+    huevosRestantes--;
+
     let colores = {
         b: { color: Phaser.Display.Color.GetColor(255, 255, 255), puntos: 10 },
         m: { color: Phaser.Display.Color.GetColor(192, 128, 16), puntos: 20 },
@@ -210,11 +238,17 @@ function generarHuevo(scene) {
     });
 
     huevos.push(huevo);
+
+    // Si ya no quedan huevos por generar, acaba el juego
+    if (huevosRestantes === 0 && huevos.length === 0) {
+        finDelJuego(scene);
+    }
 }
+
 
 // !!!!ACTUALIZACIÓN DEL JUEGO!!!!
 function actualiza() {
-    if (juegoTerminado) return;
+    if (juegoTerminado || !juegoIniciado) return;
 
     huevos = huevos.filter(huevo => {
         if (huevo.falling) {
@@ -222,8 +256,7 @@ function actualiza() {
 
             if (huevo.y > canvas_h) {
                 huevo.destroy();
-                countdown -= 5;
-				puntuacion -= 1;
+                countdown -= 10;
                 countdown_text.setText(`Tiempo: ${countdown}`);
                 fx.bad.play();
                 return false;
@@ -232,6 +265,11 @@ function actualiza() {
         }
         return true;
     });
+
+    // Si no quedan huevos en la pantalla y ya no hay más por generar, termina el juego
+    if (huevos.length === 0 && huevosRestantes === 0) {
+        finDelJuego(this);
+    }
 }
 
 
@@ -252,8 +290,8 @@ function finDelJuego(scene) {
         fontSize: "48px",
         fontFamily: "Comic Sans MS",
         fontStyle: "bold",
-        color: "pink",
-        stroke: "#ffffff",
+		color: "#ff9ea4",
+		stroke: "#ffffff",
         strokeThickness: 6,
         align: "center"
     }).setOrigin(0.5);
@@ -263,8 +301,8 @@ function finDelJuego(scene) {
         fontSize: "32px",
         fontFamily: "Comic Sans MS",
         fontStyle: "bold",
-        color: "#ffffff",
-        stroke: "pink",
+		color: "#ffffff",
+		stroke: "#ff9ea4",
         strokeThickness: 4,
         align: "center"
     }).setOrigin(0.5);
