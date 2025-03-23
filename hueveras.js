@@ -91,10 +91,10 @@ function crea() {
     // Contadores
 	countdown_text = this.add.text(field_center, 16, `Tiempo: ${countdown}`, {
 		fontSize: "28px",
-		fontFamily: "Comic Sans MS", // Puedes cambiarla por la que prefieras
+		fontFamily: "Comic Sans MS",
 		fontStyle: "bold",
-		color: "#ff69b4", // Rosa
-		stroke: "#ffffff", // Borde blanco
+		color: "pink",
+		stroke: "#ffffff",
 		strokeThickness: 4
 	});
 
@@ -102,7 +102,7 @@ function crea() {
 		fontSize: "28px",
 		fontFamily: "Comic Sans MS",
 		fontStyle: "bold",
-		color: "#ff69b4",
+		color: "pink",
 		stroke: "#ffffff",
 		strokeThickness: 4
 	});
@@ -116,14 +116,14 @@ function crea() {
     fx.good = this.sound.add('good_fx');
     fx.bad = this.sound.add('bad_fx');
 
-    // Generación escalonada de huevos
+    // Generación de huevos
     huevo_spawn_interval = setInterval(() => {
         if (!juegoTerminado) {
             generarHuevo(this);
         }
     }, Phaser.Math.Between(500, 1500));
 
-    // Iniciar el temporizador correctamente
+    // Iniciar el temporizador
     countdown_interval = setInterval(() => {
         if (!juegoTerminado) {
             countdown--;
@@ -135,7 +135,7 @@ function crea() {
         }
     }, 1000);
 
-    // Habilitar eventos de arrastre
+    // Arrastres
     this.input.on('drag', function (pointer, objeto, x, y) {
         if (!juegoTerminado) {
             objeto.x = x;
@@ -240,12 +240,32 @@ function finDelJuego(scene) {
     music.background.stop();
     music.game_over.play();
 
-	scene.add.text(canvas_w / 2 - 100, canvas_h / 2, "GAME OVER!!", {
-		fontSize: "48px",
-		fontFamily: "Comic Sans MS",
-		fontStyle: "bold",
-		color: "#ff69b4",
-		stroke: "#ffffff",
-		strokeThickness: 6
-	});
+    // Ocultar contadores
+    countdown_text.setVisible(false);
+    puntuacion_text.setVisible(false);
+
+    // Mostrar GAME OVER en el centro
+    scene.add.text(canvas_w / 2, canvas_h / 2 - 40, "GAME OVER!!", {
+        fontSize: "48px",
+        fontFamily: "Comic Sans MS",
+        fontStyle: "bold",
+        color: "pink",
+        stroke: "#ffffff",
+        strokeThickness: 6,
+        align: "center"
+    }).setOrigin(0.5);
+
+    // Mostrar Puntuación Final
+    scene.add.text(canvas_w / 2, canvas_h / 2 + 20, `Puntuación final: ${puntuacion}`, {
+        fontSize: "32px",
+        fontFamily: "Comic Sans MS",
+        fontStyle: "bold",
+        color: "#ffffff",
+        stroke: "pink",
+        strokeThickness: 4,
+        align: "center"
+    }).setOrigin(0.5);
+
+    // Quitar interactividad
+    huevos.forEach(huevo => huevo.disableInteractive());
 }
