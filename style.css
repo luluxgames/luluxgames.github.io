@@ -1,184 +1,117 @@
-@media (max-width: 720px) {
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@keyframes blink {
-	0% {opacity: 0}
-	49%{opacity: 0}
-	50% {opacity: 1}
-}
-
-blink{animation: blink 1s infinite;}
-
-
+/*Fondo*/
 body {
-    text-align: center;
-    font-family: "Roboto Flex", serif;
-    background-color: #fce4ec;
-    background-image: url('media/fondo.gif');
-    background-size: 1366px 768px;
     margin: 0;
-    padding: 20px;
+    background-color: black;
+    color: white;
 }
 
+/*Cabecera*/
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-header img {
     width: 100%;
-    max-width: 800px;
+    text-align: center;
+    padding-top: 60px;
+}
+/*LULUX*/
+header .logo {
+    max-width: 25%;
+    min-width: 400px;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: #ec407a;
-    font-size: 3em;
-    margin-top: 50px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px #d81b60;
-}
-
-h2 {
-    color: #d81b60;
-    text-align: center;
-    font-size: 1.8em;
-    margin-top: 40px;
-    font-weight: bolder;
-	text-shadow: 2px 2px 4px #d81b60;
-}
-
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px auto;
-    max-width: 800px;
-}
-
-main p {
-    color: #000000;
-    font-size: 1em;
-    line-height: 1.8;
-    text-align: justify;
-    margin: 20px 0;
-}
-
-main img {
     display: block;
-    max-width: 70%;
+    margin: 0 auto 10px;
+}
+
+/*by Lucia*/
+header .firma {
+    max-width: 20%;
+    min-width: 300px;
     height: auto;
-    margin: 20px auto;
+    display: block;
+    margin: 0 auto;
 }
 
-nav {
-    background-color: #fff0f6;
-    border-radius: 20px;
-    padding: 15px;
-    margin-top: 0;
-    text-align: center;
-    border: 3px solid #ff9ea4;
-}
-
-video {
-    background-color: #fff0f6;
-    border-radius: 20px;
-    padding: 15px;
-    margin-top: 0;
-    text-align: center;
-    border: 3px solid #ff9ea4;
-}
-
-audio {
-    background-color: #fff0f6;
-    border-radius: 20px;
-    padding: 15px;
-    margin-top: 0;
-    text-align: center;
-    border: 3px solid #ff9ea4;
-}
-
-details {
-    background-color: #fff0f6;
-    border-radius: 20px;
-    padding: 15px;
-    margin-top: 0;
-    text-align: center;
-    border: 3px solid #ff9ea4;
-}
-
-
-ul {
-    list-style-type: none;
-    padding: 0;
+/*Main general*/
+main {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 0;
+    align-items: center;
+    min-height: 50vh;
+    flex-direction: column;
+}
+main img {
+    width: 700px;
+    height: auto;
 }
 
-li {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #ad1457;
+/*Contenedor menú fondo de papel*/
+.menu-contenedor {
+    background: url('img/papel.png') no-repeat center center;
+    background-size: contain;
+    width: 450px;
+    height: 368px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-li a {
-    text-decoration: none;
-    color: #4b4b4b;
-    font-weight: 600;
+/*Opciones*/
+.menu {
+    display: flex;
+    flex-direction: column;
 }
 
-li a:hover {
-    color: #ec407a;
-    text-shadow: 1px 1px 3px #d81b60;
+/*Botones*/
+.menu button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.menu button img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s;
 }
 
+/*Zoom*/
+.menu button:hover img {
+    transform: scale(1.1);
+}
 
-footer p {
-    margin: 0;
-    color: pink;
+/*Footer*/
+footer {
+    width: 100%;
     text-align: center;
-    font-size: 1em;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+footer img {
+    width: 150px;
+    height: auto;
 }
 
-figure {
-    text-align: center;
-    margin: 20px auto;
-    max-width: 600px;
+/*Flores*/
+.decor-flor {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
 }
-
-figcaption {
-    font-size: 0.9em;
-    color: #000000;
-    margin-top: 8px;
-    font-style: bold;
+/*Posiciones*/
+.flor1 {
+    top: 40px;
+    left: 50px;
+    width: 180px;
 }
-
-
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 300 to 700
-
-.signika-negative-<uniquifier> {
-  font-family: "Signika Negative", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+.flor2 {
+    top: 450px;
+    left: 70px;
+    width: 160px;
+}
+.flor3 {
+    top: 220px;
+    right: 60px;
+    width: 170px;
+}
+.flor4 {
+    top: 620px;
+    right: 50px;
+    width: 150px;
 }
