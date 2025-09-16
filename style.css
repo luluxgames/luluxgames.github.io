@@ -3,6 +3,8 @@ body {
     margin: 0;
     background-color: black;
     color: white;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
 /*Cabecera*/
@@ -36,13 +38,17 @@ main {
     align-items: center;
     min-height: 50vh;
     flex-direction: column;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
 }
+
 main img {
     width: 700px;
     height: auto;
 }
 
-/*Contenedor menú fondo de papel*/
+/* Contenedor menú fondo de papel */
 .menu-contenedor {
     background: url('img/papel.png') no-repeat center center;
     background-size: contain;
@@ -53,26 +59,31 @@ main img {
     align-items: center;
 }
 
-/*Opciones*/
+/* Opciones */
 .menu {
     display: flex;
     flex-direction: column;
 }
 
-/*Botones*/
-.menu button {
+/* Enlaces del menú */
+.menu a {
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
+    text-align: center;
+    margin: 5px 0;
 }
-.menu button img {
+
+/* Imágenes de los botones */
+.menu a img {
     width: 300px;
     height: auto;
     transition: transform 0.3s;
 }
 
-/*Zoom*/
-.menu button:hover img {
+/* Zoom al pasar el ratón */
+.menu a:hover img {
     transform: scale(1.1);
 }
 
