@@ -13,23 +13,22 @@ header {
     text-align: center;
     padding-top: 60px;
 }
-/*LULUX*/
-header .logo {
-    max-width: 25%;
-    min-width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/*by Lucia*/
-header .firma {
-    max-width: 20%;
-    min-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+header .logo {
+  max-width: 60%;
+  min-width: 200px;
 }
+
+header .firma {
+  max-width: 50%;
+  min-width: 180px;
+}
+
 
 /*Main general*/
 main {
@@ -48,15 +47,17 @@ main img {
     height: auto;
 }
 
-/* Contenedor menú fondo de papel */
 .menu-contenedor {
-    background: url('img/papel.png') no-repeat center center;
-    background-size: contain;
-    width: 450px;
-    height: 368px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: url('img/papel.png') no-repeat center center;
+  background-size: contain;
+  width: 90%;         /* ocupa hasta el 90% del ancho */
+  max-width: 450px;   /* nunca más grande que el original */
+  height: auto;
+  aspect-ratio: 450 / 368; /* mantiene la proporción del papel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 /* Opciones */
@@ -98,6 +99,24 @@ footer img {
     width: 150px;
     height: auto;
 }
+footer p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Enlaces generales */
+a {
+  color: #f71984;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #f71984;
+}
+
 
 /*Flores*/
 .decor-flor {
@@ -105,6 +124,11 @@ footer img {
     z-index: -1;
     pointer-events: none;
 }
+
+.subpage .decor-flor {
+  opacity: 0.3;
+}
+
 /*Posiciones*/
 .flor1 {
     top: 40px;
