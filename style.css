@@ -1,30 +1,38 @@
-/*Fondo*/
+/* ==================================================
+   GLOBAL STYLES
+================================================== */
 body {
-    margin: 0;
-    background-color: black;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-}
-
-/* Espacio subpages*/
-@media (max-width: 768px) {
-  .subpage main {
-    padding: 40px 60px;
-  }
-}
-
-/*Cabecera*/
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  color: #f71984;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #f71984;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
 }
 
 header .logo {
@@ -37,30 +45,40 @@ header .firma {
   min-width: 180px;
 }
 
-/* Logo subpáginas */
 .subpage .logo {
   max-width: 250px;
   min-width: 120px;
 }
 
-
-/*Main general*/
+/* ==================================================
+   MAIN
+================================================== */
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    flex-direction: column;
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 main img {
-    width: 700px;
-    height: auto;
+  width: 700px;
+  height: auto;
 }
 
+.about-container img[src*="lucia.png"] {
+  max-width: 280px;
+  height: auto;
+  border-radius: 15px;
+  padding-top: 30px;
+}
+
+/* ==================================================
+   MENU PRINCIPAL
+================================================== */
 .menu-contenedor {
   background: url('img/papel.png') no-repeat center center;
   background-size: contain;
@@ -74,98 +92,91 @@ main img {
   margin: 0 auto;
 }
 
-/* Opciones */
 .menu {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Enlaces del menú */
 .menu a {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin: 5px 0;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px 0;
 }
 
-/* Imágenes de los botones */
 .menu a img {
-    width: 300px;
-    height: auto;
-    transition: transform 0.3s;
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s;
 }
 
-/* Zoom al pasar el ratón */
 .menu a:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-/*Footer*/
+/* ==================================================
+   FOOTER
+================================================== */
 footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
 }
+
 footer img {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
+
 footer p {
   margin-top: 10px;
   font-size: 14px;
   color: #ccc;
 }
 
-/* Enlaces generales */
-a {
-  color: #f71984;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #f71984;
-}
-
-
-/*Flores*/
+/* ==================================================
+   DECORACIONES (Flores)
+================================================== */
 .decor-flor {
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .subpage .decor-flor {
   opacity: 0.3;
 }
 
-/*Posiciones*/
 .flor1 {
-    top: 40px;
-    left: 50px;
-    width: 180px;
-}
-.flor2 {
-    top: 450px;
-    left: 70px;
-    width: 160px;
-}
-.flor3 {
-    top: 220px;
-    right: 60px;
-    width: 170px;
-}
-.flor4 {
-    top: 620px;
-    right: 50px;
-    width: 150px;
+  top: 40px;
+  left: 50px;
+  width: 180px;
 }
 
-/* Enlaces subpages */
+.flor2 {
+  top: 450px;
+  left: 70px;
+  width: 160px;
+}
+
+.flor3 {
+  top: 220px;
+  right: 60px;
+  width: 170px;
+}
+
+.flor4 {
+  top: 620px;
+  right: 50px;
+  width: 150px;
+}
+
+/* ==================================================
+   BOTONES Y ENLACES ESPECIALES
+================================================== */
 .boton-centro {
   text-align: center;
   margin: 30px 0;
@@ -185,4 +196,92 @@ a:hover {
 .btn:hover {
   background-color: #521635;
   transform: scale(1.05);
+}
+
+/* ==================================================
+   GRIDS Y TARJETAS
+================================================== */
+.projects-grid,
+.games-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.project-card,
+.game-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+}
+
+.project-card:hover,
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: #f71984;
+  margin-bottom: 10px;
+}
+
+.game-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* ==================================================
+   SECCIÓN NARRATIVE
+================================================== */
+.narrative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.narrative-card {
+  background-color: #111;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.narrative-card:hover {
+  transform: translateY(-5px);
+}
+
+.narrative-card h2 {
+  color: #f71984;
+  margin: 15px 0;
+}
+
+.narrative-card p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.narrative-img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+/* ==================================================
+   MEDIA QUERIES
+================================================== */
+@media (max-width: 768px) {
+  .subpage main {
+    padding: 40px 60px;
+  }
 }
