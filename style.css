@@ -7,11 +7,19 @@ body {
     line-height: 1.6;
 }
 
+/* Espacio subpages*/
+@media (max-width: 768px) {
+  .subpage main {
+    padding: 40px 60px;
+  }
+}
+
 /*Cabecera*/
 header {
-    width: 100%;
-    text-align: center;
-    padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
 }
 
 img {
@@ -20,13 +28,19 @@ img {
 }
 
 header .logo {
-  max-width: 60%;
+  max-width: 500px;
   min-width: 200px;
 }
 
 header .firma {
-  max-width: 50%;
+  max-width: 260px;
   min-width: 180px;
+}
+
+/* Logo subpáginas */
+.subpage .logo {
+  max-width: 250px;
+  min-width: 120px;
 }
 
 
@@ -50,10 +64,10 @@ main img {
 .menu-contenedor {
   background: url('img/papel.png') no-repeat center center;
   background-size: contain;
-  width: 90%;         /* ocupa hasta el 90% del ancho */
-  max-width: 450px;   /* nunca más grande que el original */
+  width: 90%;
+  max-width: 450px;
   height: auto;
-  aspect-ratio: 450 / 368; /* mantiene la proporción del papel */
+  aspect-ratio: 450 / 368;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,4 +163,26 @@ a:hover {
     top: 620px;
     right: 50px;
     width: 150px;
+}
+
+/* Enlaces subpages */
+.boton-centro {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #f71984;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #521635;
+  transform: scale(1.05);
 }
