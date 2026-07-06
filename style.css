@@ -1,327 +1,929 @@
 /* ==================================================
-   BASE
+   LULUX PORTFOLIO
 ================================================== */
-body {
-    margin: 0;
-    background-color: black;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+html{
+    scroll-behavior:smooth;
 }
 
-/* Espacio subpages */
-@media (max-width: 768px) {
-  .subpage main {
-    padding: 40px 60px;
-  }
+body{
+
+    background:#050505;
+    color:#f2f2f2;
+
+    font-family:"Poppins",sans-serif;
+    font-size:17px;
+    line-height:1.75;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+    height:auto;
+
+}
+
+a{
+
+    color:#ff8fa9;
+    text-decoration:none;
+    transition:.25s;
+
+}
+
+a:hover{
+
+    color:#ffd75a;
+
+}
+
+strong{
+
+    font-weight:600;
+    color:white;
+
+}
+
+em{
+
+    color:#bbbbbb;
+
 }
 
 /* ==================================================
-   CABECERA
+   TYPOGRAPHY
 ================================================== */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+
+h1{
+
+    font-size:2.8rem;
+    font-weight:600;
+    margin-bottom:20px;
+    color:white;
+
 }
 
-header .logo {
-  max-width: 500px;
-  min-width: 200px;
+h2{
+
+    font-size:2rem;
+    margin-bottom:18px;
+    color:#ff8fa9;
+    font-weight:600;
+
 }
 
-header .firma {
-  max-width: 260px;
-  min-width: 180px;
+h3{
+
+    font-size:1.35rem;
+    color:white;
+    margin-bottom:10px;
+
 }
 
-.subpage .logo {
-  max-width: 250px;
-  min-width: 120px;
+h4{
+
+    font-size:.95rem;
+    color:#999;
+    font-weight:500;
+
+}
+
+p{
+
+    margin:18px 0;
+    color:#d6d6d6;
+
+}
+
+section{
+
+    margin-bottom:60px;
+
 }
 
 /* ==================================================
-   MAIN
+   LAYOUT
 ================================================== */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    flex-direction: column;
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 20px;
+
+main{
+
+    width:min(920px,92%);
+    margin:auto;
+    padding-bottom:20px;
+
 }
 
-main img {
-    width: 700px;
-    height: auto;
-}
+.subpage main{
 
-.about-container img[src*="lucia.png"] {
-  max-width: 280px;
-  height: auto;
-  border-radius: 15px;
-  padding-top: 30px;
+    width:min(1100px,92%);
+
 }
 
 /* ==================================================
-   MENÚ PRINCIPAL (INDEX)
+   HEADER
 ================================================== */
-.menu-contenedor {
-  background: url('img/papel.png') no-repeat center center;
-  background-size: contain;
-  width: 90%;
-  max-width: 450px;
-  height: auto;
-  aspect-ratio: 450 / 368;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+
+header{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:55px 0 20px;
+
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
+.logo{
+
+    width:360px;
+    transition:.2s;
+
 }
 
-.menu a {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin: 5px 0;
+.logo:hover{
+
+    opacity:.9;
+
 }
 
-.menu a img {
-    width: 300px;
-    height: auto;
-    transition: transform 0.3s;
+.firma{
+
+    display:none;
+
 }
 
-.menu a:hover img {
-    transform: scale(1.1);
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    max-width:640px;
+    margin:auto;
+    text-align:center;
+
+}
+
+.hero h2{
+
+    color:#ff8fa9;
+    font-size:1.15rem;
+    margin-bottom:18px;
+
+}
+
+.hero p{
+
+    font-size:.98rem;
+    line-height:1.7;
+
+}
+
+/* ==================================================
+   MENU PAPER
+================================================== */
+
+.menu-contenedor{
+
+    background:url("img/papel.png") center center no-repeat;
+    background-size:contain;
+
+    width:470px;
+    height:395px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:25px auto;
+
+}
+
+.main-menu{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:22px;
+
+    transform:translateY(-8px);
+
+}
+
+.main-menu a{
+
+    color:#34241f;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    text-transform:uppercase;
+
+    transition:.2s;
+
+}
+
+.main-menu a:hover{
+
+    color:#a04ca5;
+
+}
+
+/* ==================================================
+   ABOUT IMAGE
+================================================== */
+
+.about-container{
+
+    display:flex;
+    justify-content:center;
+
+    margin-top:10px;
+
+}
+
+.about-container img{
+
+    width:250px;
+
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    color:#ff8fa9;
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    color:#ffd75a;
+
 }
 
 /* ==================================================
    FOOTER
 ================================================== */
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+
+footer{
+
+    margin-top:30px;
+
+    padding:35px 20px;
+	
+    border-top:1px solid #222;
+
+    text-align:center;
+
 }
-footer img {
-    width: 150px;
-    height: auto;
+
+footer img{
+
+    width:120px;
+    margin:0 auto 18px;
+
 }
-footer p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ccc;
+
+footer p{
+
+    color:#9a9a9a;
+    margin:8px 0;
+
+}
+
+footer blockquote{
+
+    margin-top:18px;
+
+    font-size:.9rem;
+
+    color:#666;
+
+    font-style:italic;
+
+    border:none;
+
 }
 
 /* ==================================================
-   ENLACES Y BOTONES (ROSA + AMARILLO)
+   FLOWERS
 ================================================== */
-a {
-  color: #ff8fa9; /* rosa */
-  text-decoration: none;
-  font-weight: bold;
+
+.decor-flor{
+
+    position:fixed;
+
+    z-index:-1;
+
+    opacity:.16;
+
+    pointer-events:none;
+
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #ffd700; /* amarillo al hover */
+.flor1{
+
+    top:40px;
+    left:40px;
+    width:170px;
+
 }
 
-.boton-centro {
-  text-align: center;
-  margin: 30px 0;
+.flor2{
+
+    left:60px;
+    bottom:110px;
+    width:150px;
+
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #ff8fa9; /* rosa */
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+.flor3{
+
+    right:60px;
+    top:180px;
+    width:170px;
+
 }
 
-.btn:hover {
-  background-color: #ffd700; /* amarillo */
-  color: #111; /* contraste */
-  transform: scale(1.05);
-  box-shadow: 0 0 12px #ff8fa9; /* brillo rosa */
+.flor4{
+
+    right:40px;
+    bottom:70px;
+    width:145px;
+
 }
 
 /* ==================================================
-   FLORES DECORATIVAS
+   INDEX ONLY
 ================================================== */
-.decor-flor {
-    position: fixed;
-    z-index: -1;
-    pointer-events: none;
+
+.index-description{
+
+    max-width:560px;
+
+    margin:0 auto;
+
+    text-align:center;
+
 }
 
-.subpage .decor-flor {
-  opacity: 0.3;
-}
+.index-description p{
 
-.flor1 {
-    top: 40px;
-    left: 50px;
-    width: 180px;
-}
-.flor2 {
-    top: 450px;
-    left: 70px;
-    width: 160px;
-}
-.flor3 {
-    top: 220px;
-    right: 60px;
-    width: 170px;
-}
-.flor4 {
-    top: 620px;
-    right: 50px;
-    width: 150px;
+    font-size:.95rem;
+
+    color:#cfcfcf;
+
 }
 
 /* ==================================================
-   TARJETAS: PROYECTOS (TECH WORK)
+   SMALL DETAILS
 ================================================== */
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+
+::selection{
+
+    background:#ff8fa9;
+    color:black;
+
 }
 
-.project-card {
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.2s;
+::-webkit-scrollbar{
+
+    width:8px;
+
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+::-webkit-scrollbar-track{
+
+    background:#090909;
+
 }
 
-.project-card h3 {
-  color: #ff8fa9;
-  margin-bottom: 10px;
+::-webkit-scrollbar-thumb{
+
+    background:#333;
+
 }
 
-.project-card:hover h3 {
-  color: #ffd700;
+::-webkit-scrollbar-thumb:hover{
+
+    background:#555;
+
 }
 
 /* ==================================================
-   TARJETAS: JUEGOS (ITCH.IO)
+   MOBILE
 ================================================== */
-.games-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+
+@media(max-width:900px){
+
+    .logo{
+
+        width:270px;
+
+    }
+
+    .menu-contenedor{
+
+        width:390px;
+        height:330px;
+
+    }
+
+    .main-menu a{
+
+        font-size:1.2rem;
+
+    }
+
 }
 
-.game-card {
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.2s;
-}
+@media(max-width:600px){
 
-.game-card:hover {
-  transform: translateY(-5px);
-}
+    body{
 
-.game-card h3 {
-  color: #ff8fa9;
-}
+        font-size:16px;
 
-.game-card:hover h3 {
-  color: #ffd700;
-}
+    }
 
-.game-img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .menu-contenedor{
+
+        width:320px;
+        height:270px;
+
+    }
+
+    .main-menu{
+
+        gap:16px;
+
+    }
+
+    .main-menu a{
+
+        font-size:1rem;
+
+    }
+
+    .about-container img{
+
+        width:190px;
+
+    }
+
+    .decor-flor{
+
+        opacity:.08;
+
+    }
+
 }
 
 /* ==================================================
-   TARJETAS: NARRATIVA
+   SUBPAGES
 ================================================== */
-.narrative-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  margin-top: 30px;
+
+.subpage section{
+
+    margin-bottom:90px;
+
 }
 
-.narrative-card {
-  background-color: #111;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
+.subpage section>p{
+
+    max-width:760px;
+    margin-bottom:30px;
+
 }
 
-.narrative-card:hover {
-  transform: translateY(-5px);
+.subpage h1{
+
+    margin-bottom:15px;
+
 }
 
-.narrative-card h2 {
-  color: #ff8fa9;
-  margin: 15px 0;
+.subpage h2{
+
+    margin-top:70px;
+    margin-bottom:18px;
+
 }
 
-.narrative-card:hover h2 {
-  color: #ffd700;
-}
-
-.narrative-card p {
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-.narrative-img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  object-fit: cover;
-  max-height: 200px;
-}
 
 /* ==================================================
-   TARJETA ANCHA (TFG / INTRO)
+   FEATURED PROJECTS
 ================================================== */
-.narrative-card.wide {
-  grid-column: 1 / -1;
+
+.featured-grid{
+
+    display:flex;
+    flex-direction:column;
+    gap:55px;
+
+}
+
+.featured-card{
+
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:45px;
+    align-items:start;
+
+}
+
+.featured-img{
+
+    width:100%;
+    border-radius:6px;
+
+}
+
+.featured-card h3{
+
+    font-size:2rem;
+    margin-bottom:12px;
+
+}
+
+.featured-card p{
+
+    text-align:left;
+
+}
+
+.card-buttons{
+
+    display:flex;
+    gap:25px;
+    margin-top:25px;
+
+}
+
+
+/* ==================================================
+   ITCH GAMES
+================================================== */
+
+.games-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+    gap:60px 45px;
+    margin-top:35px;
+
+}
+
+.game-card{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.game-img{
+
+    width:100%;
+    margin-bottom:18px;
+    border-radius:6px;
+
+}
+
+.game-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.game-card p{
+
+    text-align:left;
+
+}
+
+
+/* ==================================================
+   PROJECTS GRID
+================================================== */
+
+.projects-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:60px 45px;
+    margin-top:35px;
+
+}
+
+.project-card{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.project-img{
+
+    width:100%;
+    border-radius:6px;
+    margin-bottom:18px;
+
+}
+
+.project-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.project-card p{
+
+    text-align:left;
+
+}
+
+
+/* ==================================================
+   NARRATIVE
+================================================== */
+
+.narrative-grid{
+
+    display:flex;
+    flex-direction:column;
+    gap:90px;
+
+}
+
+.narrative-card{
+
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:45px;
+    align-items:start;
+
+}
+
+.narrative-card.wide{
+
+    grid-template-columns:420px 1fr;
+
+}
+
+.narrative-img{
+
+    width:100%;
+    border-radius:6px;
+
+}
+
+.narrative-card h2{
+
+    color:white;
+    margin-top:0;
+    margin-bottom:18px;
+    font-size:1.8rem;
+
+}
+
+.narrative-card p{
+
+    text-align:left;
+
+}
+
+
+/* ==================================================
+   EXPERIENCE
+================================================== */
+
+.experience-featured{
+
+    margin-bottom:80px;
+    padding-bottom:40px;
+
+    border-bottom:1px solid #222;
+
+}
+
+.experience-featured h3{
+
+    font-size:2rem;
+
+}
+
+.experience-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:55px;
+
+}
+
+.experience-card{
+
+    padding-bottom:30px;
+    border-bottom:1px solid #222;
+
+}
+
+.experience-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.experience-card h4{
+
+    color:#9d9d9d;
+    margin-bottom:12px;
+
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+
+}
+
+.contact-item{
+
+    padding-bottom:18px;
+    border-bottom:1px solid #222;
+
+}
+
+.contact-item h3{
+
+    margin-bottom:10px;
+
+}
+
+
+/* ==================================================
+   IMAGES
+================================================== */
+
+.project-img,
+.game-img,
+.narrative-img,
+.featured-img{
+
+    transition:opacity .25s;
+
+}
+
+.project-img:hover,
+.game-img:hover,
+.narrative-img:hover,
+.featured-img:hover{
+
+    opacity:.9;
+
+}
+
+
+/* ==================================================
+   LISTS
+================================================== */
+
+ul{
+
+    margin:18px 0;
+    padding-left:22px;
+
+}
+
+li{
+
+    margin-bottom:8px;
+
+}
+
+
+/* ==================================================
+   BLOCKQUOTE
+================================================== */
+
+blockquote{
+
+    border-left:2px solid #333;
+    padding-left:18px;
+    margin-top:25px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:1000px){
+
+    .featured-card,
+    .narrative-card,
+    .narrative-card.wide{
+
+        display:block;
+
+    }
+
+    .featured-img,
+    .narrative-img{
+
+        margin-bottom:25px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .projects-grid,
+    .games-grid,
+    .experience-grid,
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .subpage main{
+
+        width:92%;
+
+    }
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    font-size:.82rem;
+
+    color:#888;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+    margin-bottom:12px;
+
+}
+
+.tech-list{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+
+    margin:18px 0;
+
+}
+
+.tech-list span{
+
+    color:#999;
+
+    font-size:.9rem;
+
 }
